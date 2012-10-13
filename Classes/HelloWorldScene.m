@@ -14,6 +14,10 @@
 @synthesize moveAction = _moveAction;
 @synthesize walkAction = _walkAction;
 
+@synthesize tileMap    = _tileMap; 
+@synthesize background = _background;
+@synthesize currentLevel = _currentLevel;
+
 +(id) scene
 {
 	// 'scene' is an autorelease object.
@@ -23,7 +27,8 @@
 	HelloWorld *layer = [HelloWorld node];
 	
 	// add layer as a child to scene
-	[scene addChild: layer];
+	//[scene addChild: layer];
+    [scene addChild: layer z:1];
 	
 	// return the scene
 	return scene;
@@ -57,11 +62,11 @@
 	}
     [self schedule:@selector(gameLogic:) interval:3.0];
     
-    /* {{{
+    /* {{{head test text
      */
     CGSize winSize = [[CCDirector sharedDirector] winSize];
     // Create a label for display purposes
-    _label = [[CCLabelTTF labelWithString:@"建造项目" 
+    _label = [[CCLabelTTF labelWithString:@"建造的项目" 
                                dimensions:CGSizeMake(420, 50) alignment:UITextAlignmentCenter 
                                  fontName:@"Arial" fontSize:28.0] retain];
     _label.position = ccp(winSize.width/2, 
@@ -78,9 +83,8 @@
     [self addChild:_moneyLabel];
 
     /* }}} */
-    /* {{{
+    /* {{{Standard method to create a button
      */
-    // Standard method to create a button
     CCMenuItem *starMenuItem = [CCMenuItemImage 
                                 itemFromNormalImage:@"ButtonPlus.png" selectedImage:@"ButtonPlusSel.png" 
                                 target:self selector:@selector(starButtonTapped:)];

@@ -12,12 +12,18 @@ CCLabelTTF *_moneyLabel;
     CCAction *_moveAction;
     BOOL _moving;
     NSMutableArray *_players;
+    CCTMXTiledMap *_tileMap;
+    CCTMXLayer *_background;  
+    int _currentLevel;
 }
 
 // Add after the HelloWorld interface
 @property (nonatomic, retain) CCSprite *playerUnit;
 @property (nonatomic, retain) CCAction *walkAction;
 @property (nonatomic, retain) CCAction *moveAction;
+@property (nonatomic, retain) CCTMXTiledMap *tileMap;
+@property (nonatomic, retain) CCTMXLayer *background;
+@property (nonatomic, assign) int currentLevel;
 
 // returns a Scene that contains the HelloWorld as the only child
 +(id) scene;
