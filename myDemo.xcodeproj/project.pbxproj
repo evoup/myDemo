@@ -243,6 +243,7 @@
 		E02BB8B3126CC224006E46A2 /* ZipUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = E02BB80D126CC224006E46A2 /* ZipUtils.h */; };
 		E02BB8B4126CC224006E46A2 /* ZipUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E02BB80E126CC224006E46A2 /* ZipUtils.m */; };
 		E11EC267129A2D92008B1CA2 /* logo6.png in Resources */ = {isa = PBXBuildFile; fileRef = E11EC261129A2D92008B1CA2 /* logo6.png */; };
+		ED0C3E26162AB3EC00D78073 /* TileMap.tmx in Resources */ = {isa = PBXBuildFile; fileRef = ED0C3E25162AB3EC00D78073 /* TileMap.tmx */; };
 		ED4B3D2F15725D88001BACF9 /* myDemoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ED4B3D2C15725D88001BACF9 /* myDemoAppDelegate.m */; };
 		ED4B3D3015725D88001BACF9 /* HelloWorldScene.m in Sources */ = {isa = PBXBuildFile; fileRef = ED4B3D2E15725D88001BACF9 /* HelloWorldScene.m */; };
 		ED5A249915945C4A00553766 /* AnimPlayerUnit01.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED5A249715945C4A00553766 /* AnimPlayerUnit01.plist */; };
@@ -506,6 +507,7 @@
 		E02BB80D126CC224006E46A2 /* ZipUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipUtils.h; sourceTree = "<group>"; };
 		E02BB80E126CC224006E46A2 /* ZipUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZipUtils.m; sourceTree = "<group>"; };
 		E11EC261129A2D92008B1CA2 /* logo6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo6.png; sourceTree = "<group>"; };
+		ED0C3E25162AB3EC00D78073 /* TileMap.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TileMap.tmx; sourceTree = "<group>"; };
 		ED4B3D2B15725D88001BACF9 /* myDemoAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myDemoAppDelegate.h; sourceTree = "<group>"; };
 		ED4B3D2C15725D88001BACF9 /* myDemoAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myDemoAppDelegate.m; sourceTree = "<group>"; };
 		ED4B3D2D15725D88001BACF9 /* HelloWorldScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelloWorldScene.h; sourceTree = "<group>"; };
@@ -726,6 +728,7 @@
 		50F414EB1069373D002A0D5E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				ED0C3E25162AB3EC00D78073 /* TileMap.tmx */,
 				ED5A249715945C4A00553766 /* AnimPlayerUnit01.plist */,
 				ED5A249815945C4A00553766 /* AnimPlayerUnit01.png */,
 				EDB3406E1590C81F00A8FF5B /* ButtonStar.png */,
@@ -1174,6 +1177,7 @@
 				EDB340711590C81F00A8FF5B /* ButtonStarSel.png in Resources */,
 				ED5A249915945C4A00553766 /* AnimPlayerUnit01.plist in Resources */,
 				ED5A249A15945C4A00553766 /* AnimPlayerUnit01.png in Resources */,
+				ED0C3E26162AB3EC00D78073 /* TileMap.tmx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
