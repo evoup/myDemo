@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
+<map version="1.0" orientation="orthogonal" width="27" height="20" tilewidth="32" tileheight="32">
+ <tileset name="test2" firstgid="1" tilewidth="32" tileheight="32" spacing="1" margin="1">
+  <image source="tmw_desert_spacing.png"/>
+ </tileset>
+ <layer name="Layer 2" width="27" height="20">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAADNiYGAwIhKLo2Fi9WHDtgQwPe2ixOxRu0btGox2jeJRPIpH8WDDAA8oXi5wCAAA
+  </data>
+ </layer>
+ <layer name="Background" width="27" height="20" y="2">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAGNgIB6Io2FagoG0Sw0LprZ9rkg0Lkwtu5CxPhrfFYsaatlFDKYEkGMfrdPSKBgFo2AUjALsAAC8Pp5XcAgAAA==
+  </data>
+ </layer>
+ <objectgroup name="Objects" width="0" height="0">
+  <object name="Waypoint0" x="887" y="292"/>
+  <object name="Waypoint1" x="438" y="296"/>
+  <object name="Waypoint2" x="429" y="22"/>
+  <object name="Waypoint3" x="22" y="23"/>
+  <object name="Waypoint4" x="24" y="493"/>
+  <object name="Waypoint5" x="433" y="497"/>
+  <object name="Waypoint6" x="437" y="337"/>
+  <object name="Waypoint7" x="888" y="339"/>
+ </objectgroup>
+</map>
