@@ -39,8 +39,8 @@
 {
 	// always call "super" init
 	// Apple recommends to re-assign "self" with the "super" return value
-	//if( (self=[super init] )) {
-    if( (self=[super initWithColor:ccc4(0,0,0,255)] ))   {
+    //if( (self=[super init] )) {
+    if( (self=[super initWithColor:ccc4(0,0,0,255)] )) {
 		// create and initialize a Label
 		//CCLabel* label = [CCLabel labelWithString:@"Hello World" fontName:@"Marker Felt" fontSize:64];
 
