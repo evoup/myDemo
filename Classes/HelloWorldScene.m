@@ -53,6 +53,9 @@
 		// add the label as a child to this Layer
 		//[self addChild: label];
         self.tileMap = [CCTMXTiledMap tiledMapWithTMXFile:@"TileMap.tmx"];
+        self.background = [_tileMap layerNamed:@"Background"];
+        self.background.anchorPoint = ccp(0, 0);
+        [self addChild:_tileMap z:0];
         CGSize winSize = [[CCDirector sharedDirector] winSize];   
         CCSprite *player = [CCSprite spriteWithFile:@"playerUnit01.png"   
                                                rect:CGRectMake(0, 0, 115, 80)];   
