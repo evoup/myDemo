@@ -142,7 +142,7 @@
 }
 -(void)addTarget {
     
-    CCSprite *target = [CCSprite spriteWithFile:@"enemyUnit03.png" 
+    CCSprite *target = [CCSprite spriteWithFile:@"enemyUnit_9_00.png" 
                                            rect:CGRectMake(0, 0, 115, 100)]; 
     
     // Determine where to spawn the target along the Y axis
