@@ -55,13 +55,18 @@
         self.tileMap = [CCTMXTiledMap tiledMapWithTMXFile:@"TileMap.tmx"];
         self.background = [_tileMap layerNamed:@"Background"];
         self.background.anchorPoint = ccp(0, 0);
-        [self addChild:_tileMap z:0];
+        [self addChild:_tileMap z:1];
         CGSize winSize = [[CCDirector sharedDirector] winSize];   
+        /*{{{*/
+        CCSprite *realBackground = [CCSprite spriteWithFile:@"map_b0.png"   ];
+        realBackground.position = ccp(120, 120); 
+        [self addChild:realBackground z:0]; 
+        /*}}}*/
         CCSprite *player = [CCSprite spriteWithFile:@"playerUnit01.png"   
                                                rect:CGRectMake(0, 0, 115, 80)];   
         player.position = ccp(player.contentSize.width/2,   
                               winSize.height/2);   
-        [self addChild:player]; 
+        [self addChild:player z:2]; 
         _players = [[NSMutableArray alloc] init];
 	}
     [self schedule:@selector(gameLogic:) interval:3.0];
@@ -95,21 +100,21 @@
     starMenuItem.position = ccp(60, 60);
     CCMenu *starMenu = [CCMenu menuWithItems:starMenuItem, nil];
     starMenu.position = CGPointZero;
-    [self addChild:starMenu];
+    [self addChild:starMenu z:3];
     CCMenuItem *soldierMenuItem = [CCMenuItemImage 
                                 itemFromNormalImage:@"ButtonStar.png" selectedImage:@"ButtonStarSel.png" 
                                 target:self selector:@selector(soldierButtonTapped:)];
     soldierMenuItem.position = ccp(140, 60);
     CCMenu *soldierMenu = [CCMenu menuWithItems:soldierMenuItem, nil];
     soldierMenu.position = CGPointZero;
-    [self addChild:soldierMenu];
+    [self addChild:soldierMenu z:3];
     /* }}} */
     /* {{{ add sprite animation
      */
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:
      @"AnimPlayerUnit01.plist"];
     CCSpriteBatchNode *spriteSheet = [CCSpriteBatchNode batchNodeWithFile:@"AnimPlayerUnit01.png"];
-    [self addChild:spriteSheet];
+    [self addChild:spriteSheet z:3];
     // Load up the frames of our animation
     NSMutableArray *walkAnimFrames = [NSMutableArray array];
     for(int i = 0; i <= 1; ++i) {
@@ -157,7 +162,7 @@
     // Create the target slightly off-screen along the right edge,
     // and along a random position along the Y axis as calculated above
     target.position = ccp(winSize.width + (target.contentSize.width/2), actualY);
-    [self addChild:target];
+    [self addChild:target z:3];
     
     // Determine speed of the target
     int minDuration =2.0;
