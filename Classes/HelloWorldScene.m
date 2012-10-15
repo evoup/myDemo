@@ -57,16 +57,21 @@
         self.background.anchorPoint = ccp(0, 0);
         [self addChild:_tileMap z:1];
         CGSize winSize = [[CCDirector sharedDirector] winSize];   
-        /*{{{*/
-        CCSprite *realBackground = [CCSprite spriteWithFile:@"map_b0.png"   ];
+        /*{{{map background*/
+        CCSprite *realBackground = [CCSprite spriteWithFile:@"map_b0.png"];
         realBackground.position = ccp(120, 120); 
         [self addChild:realBackground z:0]; 
         /*}}}*/
-        CCSprite *player = [CCSprite spriteWithFile:@"playerUnit01.png"   
-                                               rect:CGRectMake(0, 0, 115, 80)];   
-        player.position = ccp(player.contentSize.width/2,   
-                              winSize.height/2);   
-        [self addChild:player z:2]; 
+        /*{{{startgate*/
+        CCSprite *startGate = [CCSprite spriteWithFile:@"object_starte.png"];
+        startGate.position = ccp(48, 136); 
+        [self addChild:startGate z:4]; 
+        /*}}}*/
+        //CCSprite *player = [CCSprite spriteWithFile:@"playerUnit01.png"   
+                                               //rect:CGRectMake(0, 0, 115, 80)];   
+        //player.position = ccp(player.contentSize.width/2,   
+                              //winSize.height/2);   
+        //[self addChild:player z:2]; 
         _players = [[NSMutableArray alloc] init];
 	}
     [self schedule:@selector(gameLogic:) interval:3.0];
@@ -100,14 +105,14 @@
     starMenuItem.position = ccp(60, 60);
     CCMenu *starMenu = [CCMenu menuWithItems:starMenuItem, nil];
     starMenu.position = CGPointZero;
-    [self addChild:starMenu z:3];
+    [self addChild:starMenu z:5];
     CCMenuItem *soldierMenuItem = [CCMenuItemImage 
                                 itemFromNormalImage:@"ButtonStar.png" selectedImage:@"ButtonStarSel.png" 
                                 target:self selector:@selector(soldierButtonTapped:)];
     soldierMenuItem.position = ccp(140, 60);
     CCMenu *soldierMenu = [CCMenu menuWithItems:soldierMenuItem, nil];
     soldierMenu.position = CGPointZero;
-    [self addChild:soldierMenu z:3];
+    [self addChild:soldierMenu z:5];
     /* }}} */
     /* {{{ add sprite animation
      */
