@@ -5,6 +5,7 @@
 
 // Import the interfaces
 #import "HelloWorldScene.h"
+#import "DataModel.h"
 
 // HelloWorld implementation
 @implementation HelloWorld
