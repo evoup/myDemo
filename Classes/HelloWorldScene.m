@@ -30,6 +30,9 @@
 	// add layer as a child to scene
 	//[scene addChild: layer];
     [scene addChild: layer z:1];
+
+    DataModel *dm = [DataModel getModel];
+    //dm._gameLayer = layer;
 	
 	// return the scene
 	return scene;

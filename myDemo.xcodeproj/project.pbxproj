@@ -248,6 +248,7 @@
 		ED4B3D3015725D88001BACF9 /* HelloWorldScene.m in Sources */ = {isa = PBXBuildFile; fileRef = ED4B3D2E15725D88001BACF9 /* HelloWorldScene.m */; };
 		ED5A249915945C4A00553766 /* AnimPlayerUnit01.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED5A249715945C4A00553766 /* AnimPlayerUnit01.plist */; };
 		ED5A249A15945C4A00553766 /* AnimPlayerUnit01.png in Resources */ = {isa = PBXBuildFile; fileRef = ED5A249815945C4A00553766 /* AnimPlayerUnit01.png */; };
+		ED774961162C40E0002F82C5 /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ED774960162C40E0002F82C5 /* DataModel.m */; };
 		EDABB52F162ACEBE00B53DC8 /* tmw_desert_spacing.png in Resources */ = {isa = PBXBuildFile; fileRef = EDABB52E162ACEBE00B53DC8 /* tmw_desert_spacing.png */; };
 		EDACDEEF158F728B008B4A88 /* ButtonPlus.png in Resources */ = {isa = PBXBuildFile; fileRef = EDACDEED158F728B008B4A88 /* ButtonPlus.png */; };
 		EDACDEF0158F728B008B4A88 /* ButtonPlusSel.png in Resources */ = {isa = PBXBuildFile; fileRef = EDACDEEE158F728B008B4A88 /* ButtonPlusSel.png */; };
@@ -519,6 +520,8 @@
 		ED4B3D2E15725D88001BACF9 /* HelloWorldScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelloWorldScene.m; sourceTree = "<group>"; };
 		ED5A249715945C4A00553766 /* AnimPlayerUnit01.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AnimPlayerUnit01.plist; sourceTree = "<group>"; };
 		ED5A249815945C4A00553766 /* AnimPlayerUnit01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AnimPlayerUnit01.png; sourceTree = "<group>"; };
+		ED77495F162C40E0002F82C5 /* DataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
+		ED774960162C40E0002F82C5 /* DataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
 		EDABB52E162ACEBE00B53DC8 /* tmw_desert_spacing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tmw_desert_spacing.png; sourceTree = "<group>"; };
 		EDACDEED158F728B008B4A88 /* ButtonPlus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonPlus.png; sourceTree = "<group>"; };
 		EDACDEEE158F728B008B4A88 /* ButtonPlusSel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonPlusSel.png; sourceTree = "<group>"; };
@@ -625,6 +628,8 @@
 		2D500B1D0D5A766B00DBA0E3 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				ED77495F162C40E0002F82C5 /* DataModel.h */,
+				ED774960162C40E0002F82C5 /* DataModel.m */,
 				ED4B3D2B15725D88001BACF9 /* myDemoAppDelegate.h */,
 				ED4B3D2C15725D88001BACF9 /* myDemoAppDelegate.m */,
 				ED4B3D2D15725D88001BACF9 /* HelloWorldScene.h */,
@@ -1211,6 +1216,7 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				ED4B3D2F15725D88001BACF9 /* myDemoAppDelegate.m in Sources */,
 				ED4B3D3015725D88001BACF9 /* HelloWorldScene.m in Sources */,
+				ED774961162C40E0002F82C5 /* DataModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

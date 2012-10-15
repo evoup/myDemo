@@ -10,12 +10,10 @@
 
 @interface DataModel : NSObject <NSCoding> {
     CCLayer *_gameLayer;
-        
     NSMutableArray *_targets;   
     NSMutableArray *_waypoints; 
-        
     NSMutableArray *_waves; 
-        
+    UIPanGestureRecognizer *_gestureRecognizer;
 }
 
 @property (nonatomic, retain) CCLayer *_gameLayer;
@@ -25,6 +23,7 @@
 
 @property (nonatomic, retain) NSMutableArray * _waves;
 
+@property (nonatomic, retain) UIPanGestureRecognizer *_gestureRecognizer;
 + (DataModel*)getModel;
 
 @end  
