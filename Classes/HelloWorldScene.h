@@ -10,6 +10,11 @@ CCLabelTTF *_moneyLabel;
     CCSprite *_playerUnit;
     CCAction *_walkAction;
     CCAction *_moveAction;
+    
+    CCSprite *_jzeUnit;
+    CCAction *_jzewalkAction;
+    CCAction *_jzemoveAction;
+    
     BOOL _moving;
     NSMutableArray *_players;
     CCTMXTiledMap *_tileMap;
@@ -21,6 +26,11 @@ CCLabelTTF *_moneyLabel;
 @property (nonatomic, retain) CCSprite *playerUnit;
 @property (nonatomic, retain) CCAction *walkAction;
 @property (nonatomic, retain) CCAction *moveAction;
+
+@property (nonatomic, retain) CCSprite *jzeUnit;
+@property (nonatomic, retain) CCAction *jzewalkAction;
+@property (nonatomic, retain) CCAction *jzemoveAction;
+
 @property (nonatomic, retain) CCTMXTiledMap *tileMap;
 @property (nonatomic, retain) CCTMXLayer *background;
 @property (nonatomic, assign) int currentLevel;
