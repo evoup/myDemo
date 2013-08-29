@@ -15,10 +15,6 @@
 @synthesize moveAction = _moveAction;
 @synthesize walkAction = _walkAction;
 
-@synthesize jzeUnit = _jzeUnit;
-@synthesize jzemoveAction = _jzemoveAction;
-@synthesize jzewalkAction = _jzewalkAction;
-
 @synthesize tileMap    = _tileMap; 
 @synthesize background = _background;
 @synthesize currentLevel = _currentLevel;
@@ -63,16 +59,18 @@
         self.tileMap = [CCTMXTiledMap tiledMapWithTMXFile:@"TileMap.tmx"];
         self.background = [_tileMap layerNamed:@"Background"];
         self.background.anchorPoint = ccp(0, 0);
-        [self addChild:_tileMap z:1];
+        [self addChild:_tileMap z:2];
+        _tileMap.scale = 0.5;
         CGSize winSize = [[CCDirector sharedDirector] winSize];   
-        /*{{{map background*/
+        /*{{{map background绿色背景*/
         CCSprite *realBackground = [CCSprite spriteWithFile:@"map_b0.png"];
-        realBackground.position = ccp(120, 120); 
+        realBackground.position = ccp(120, 120);
         [self addChild:realBackground z:0]; 
         /*}}}*/
-        /*{{{startgate*/
+        /*{{{startgate敌军出现的地方*/
         CCSprite *startGate = [CCSprite spriteWithFile:@"object_starte.png"];
-        startGate.position = ccp(48, 136); 
+        startGate.position = ccp(48, 136);
+        startGate.scale = 0.5;
         [self addChild:startGate z:4]; 
         /*}}}*/
         //CCSprite *player = [CCSprite spriteWithFile:@"playerUnit01.png"   
@@ -143,36 +141,17 @@
     [spriteSheet addChild:_playerUnit];
     [_players addObject:_playerUnit];
     /* }}} */
-    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:
-     @"ani_jze.plist"];
-    CCSpriteBatchNode *spriteSheet1 = [CCSpriteBatchNode batchNodeWithFile:@"ani_jze.png"];
-    [self addChild:spriteSheet1 z:3];
-    NSMutableArray *walkAnim1Frames = [NSMutableArray array];
-
-    for(int i = 0; i <= 58; ++i) {
-        [walkAnim1Frames addObject:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"jze_%03d.jpg", i]]];
-    }
-   
-    CCAnimation *walkAnim1 = [CCAnimation animationWithFrames:walkAnim1Frames delay:0.1f];
-    self.jzeUnit = [CCSprite spriteWithSpriteFrameName:@"jze_000.jpg"];
-    
-    _jzeUnit.position = ccp(winSize.width/2, winSize.height/2);
-    
-    self.jzewalkAction = [CCRepeatForever actionWithAction:
-                       [CCAnimate actionWithAnimation:walkAnim1 restoreOriginalFrame:NO]];
-    [_jzeUnit runAction:_jzewalkAction];
-    [spriteSheet1 addChild:_jzeUnit];
 	return self;
 }
 
 - (void)starButtonTapped:(id)sender {
-    [_label setString:@"夺宝奇兵恶搞"];
+    [_label setString:@"生产PHP农民工"];
     for (CCSprite *target in _players) {
         [target setPosition:ccp(target.position.x-12, target.position.y)];
     }
 }
 - (void)soldierButtonTapped:(id)sender {
-    [_label setString:@"XX恶搞"];
+    [_label setString:@"生产PHP架构师"];
     for (CCSprite *target in _players) {
         [target setPosition:ccp(target.position.x+12, target.position.y)];
     }
@@ -234,7 +213,6 @@
     // In dealloc
     self.playerUnit = nil;
     self.walkAction = nil;
-    self.jzewalkAction = nil;
 	// in case you have something to dealloc, do it in this method
 	// in this particular example nothing needs to be released.
 	// cocos2d will automatically release all the children (Label)
