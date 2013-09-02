@@ -60,7 +60,7 @@
         self.background = [_tileMap layerNamed:@"Background"];
         self.background.anchorPoint = ccp(0, 0);
         [self addChild:_tileMap z:2];
-        _tileMap.scale = 0.5;
+        _tileMap.scale = 0.7;
         CGSize winSize = [[CCDirector sharedDirector] winSize];   
         /*{{{map background绿色背景*/
         CCSprite *realBackground = [CCSprite spriteWithFile:@"map_b0.png"];
@@ -69,8 +69,8 @@
         /*}}}*/
         /*{{{startgate敌军出现的地方*/
         CCSprite *startGate = [CCSprite spriteWithFile:@"object_starte.png"];
-        startGate.position = ccp(48, 136);
-        startGate.scale = 0.5;
+        startGate.position = ccp(26, 94);
+        startGate.scale = 0.7;
         [self addChild:startGate z:4]; 
         /*}}}*/
         //CCSprite *player = [CCSprite spriteWithFile:@"playerUnit01.png"   
@@ -108,16 +108,19 @@
     CCMenuItem *starMenuItem = [CCMenuItemImage 
                                 itemFromNormalImage:@"ButtonPlus.png" selectedImage:@"ButtonPlusSel.png" 
                                 target:self selector:@selector(starButtonTapped:)];
-    starMenuItem.position = ccp(60, 60);
+   
     CCMenu *starMenu = [CCMenu menuWithItems:starMenuItem, nil];
     starMenu.position = CGPointZero;
+    starMenu.scale = 0.6;
+    starMenuItem.position = ccp(60, -80);
     [self addChild:starMenu z:5];
     CCMenuItem *soldierMenuItem = [CCMenuItemImage 
                                 itemFromNormalImage:@"ButtonStar.png" selectedImage:@"ButtonStarSel.png" 
                                 target:self selector:@selector(soldierButtonTapped:)];
-    soldierMenuItem.position = ccp(140, 60);
+    soldierMenuItem.position = ccp(130, -80);
     CCMenu *soldierMenu = [CCMenu menuWithItems:soldierMenuItem, nil];
     soldierMenu.position = CGPointZero;
+    soldierMenu.scale = 0.6;
     [self addChild:soldierMenu z:5];
     /* }}} */
     /* {{{ add sprite animation
@@ -135,6 +138,7 @@
     // CGSize winSize = [CCDirector sharedDirector].winSize;
     self.playerUnit = [CCSprite spriteWithSpriteFrameName:@"playerUnit01_00.png"]; 
     _playerUnit.position = ccp(winSize.width/2, winSize.height/2);
+    _playerUnit.scale = 0.6;
     self.walkAction = [CCRepeatForever actionWithAction:
                        [CCAnimate actionWithAnimation:walkAnim restoreOriginalFrame:NO]];
     [_playerUnit runAction:_walkAction];
@@ -160,7 +164,7 @@
     
     CCSprite *target = [CCSprite spriteWithFile:@"enemyUnit_9_00.png" 
                                            rect:CGRectMake(0, 0, 115, 100)]; 
-    
+    target.scale = 0.9; //target就是敌人
     // Determine where to spawn the target along the Y axis
     CGSize winSize = [[CCDirector sharedDirector] winSize];
     //int minY = target.contentSize.height/2;
