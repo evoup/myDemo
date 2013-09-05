@@ -11,9 +11,11 @@ CCLabelTTF *_moneyLabel;
     CCAction *_walkAction;
     CCAction *_moveAction;
     
+    /*
     CCSprite *_jzeUnit;
     CCAction *_jzewalkAction;
     CCAction *_jzemoveAction;
+    */
     
     BOOL _moving;
     CCSprite * selSprite;

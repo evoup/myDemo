@@ -243,6 +243,8 @@
     _label = nil;
     [_moneyLabel release];
     _moneyLabel = nil;
+    [_players release];
+    _players = nil;
     // In dealloc
     self.playerUnit = nil;
     self.walkAction = nil;
