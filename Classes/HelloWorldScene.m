@@ -77,7 +77,8 @@
                                                //rect:CGRectMake(0, 0, 115, 80)];   
         //player.position = ccp(player.contentSize.width/2,   
                               //winSize.height/2);   
-        //[self addChild:player z:2]; 
+        //[self addChild:player z:2];
+        [[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
         _players = [[NSMutableArray alloc] init];
 	}
     [self schedule:@selector(gameLogic:) interval:3.0];
@@ -206,6 +207,34 @@
 -(void)gameLogic:(ccTime)dt {
     [self addTarget];
 }
+
+
+- (void)selectSpriteForTouch:(CGPoint)touchLocation {
+    CCSprite * newSprite = nil;
+    for (CCSprite *sprite in _players) {
+        if (CGRectContainsPoint(sprite.boundingBox, touchLocation)) {
+            newSprite = sprite;
+            break;
+        }
+    }
+    if (newSprite != selSprite) {
+        [selSprite stopAllActions];
+        [selSprite runAction:[CCRotateTo actionWithDuration:0.1 angle:0]];
+        CCRotateTo * rotLeft = [CCRotateBy actionWithDuration:0.1 angle:-4.0];
+        CCRotateTo * rotCenter = [CCRotateBy actionWithDuration:0.1 angle:0.0];
+        CCRotateTo * rotRight = [CCRotateBy actionWithDuration:0.1 angle:4.0];
+        CCSequence * rotSeq = [CCSequence actions:rotLeft, rotCenter, rotRight, rotCenter, nil];
+        [newSprite runAction:[CCRepeatForever actionWithAction:rotSeq]];
+        selSprite = newSprite;
+    }
+}
+
+- (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
+    CGPoint touchLocation = [self convertTouchToNodeSpace:touch];
+    [self selectSpriteForTouch:touchLocation]; 
+    return TRUE; 
+}
+
 
 // on "dealloc" you need to release all your retained objects
 - (void) dealloc

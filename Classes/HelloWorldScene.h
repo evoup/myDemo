@@ -16,6 +16,7 @@ CCLabelTTF *_moneyLabel;
     CCAction *_jzemoveAction;
     
     BOOL _moving;
+    CCSprite * selSprite;
     NSMutableArray *_players;
     CCTMXTiledMap *_tileMap;
     CCTMXLayer *_background;  
