@@ -12,8 +12,10 @@
 
 // At the top, under @implementation
 @synthesize playerUnit = _playerUnit;
+@synthesize e3Unit = _enemy3Unit;
 @synthesize moveAction = _moveAction;
 @synthesize walkAction = _walkAction;
+@synthesize walkAction1 = _walkAction1;
 
 @synthesize tileMap    = _tileMap; 
 @synthesize background = _background;
@@ -124,7 +126,7 @@
     soldierMenu.scale = 0.6;
     [self addChild:soldierMenu z:5];
     /* }}} */
-    /* {{{ add sprite animation
+    /* {{{ add sprite animation for player
      */
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:
      @"AnimPlayerUnit01.plist"];
@@ -137,7 +139,7 @@
     }
     CCAnimation *walkAnim = [CCAnimation animationWithFrames:walkAnimFrames delay:0.1f];
     // CGSize winSize = [CCDirector sharedDirector].winSize;
-    self.playerUnit = [CCSprite spriteWithSpriteFrameName:@"playerUnit01_00.png"]; 
+    self.playerUnit = [CCSprite spriteWithSpriteFrameName:@"playerUnit01_00.png"];
     _playerUnit.position = ccp(winSize.width/2, winSize.height/2);
     _playerUnit.scale = 0.6;
     self.walkAction = [CCRepeatForever actionWithAction:
@@ -145,6 +147,23 @@
     [_playerUnit runAction:_walkAction];
     [spriteSheet addChild:_playerUnit];
     [_players addObject:_playerUnit];
+    /* }}} */
+    /* {{{ TODO这里要封装成一个方法*/
+    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:
+     @"enemyx3.plist"];
+    CCSpriteBatchNode *spriteSheet1 = [CCSpriteBatchNode batchNodeWithFile:@"enemyx.png"];
+    [self addChild:spriteSheet1 z:4];
+    NSMutableArray *walkAnimFrames1 = [NSMutableArray array];
+    for(int j = 0; j <= 2; ++j) {
+        [walkAnimFrames1 addObject:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"enemyx_0%d.png", j]]];
+    }
+    CCAnimation *walkAnim1 = [CCAnimation animationWithFrames:walkAnimFrames1 delay:0.1f];
+    self.e3Unit = [CCSprite spriteWithSpriteFrameName:@"enemyx_00.png"];
+    self.walkAction1 = [CCRepeatForever actionWithAction:
+                       [CCAnimate actionWithAnimation:walkAnim1 restoreOriginalFrame:NO]];
+    _enemy3Unit.position = ccp(winSize.width/2+20, winSize.height/2);
+    [_enemy3Unit runAction:_walkAction1];
+    [spriteSheet1 addChild:_enemy3Unit];
     /* }}} */
 	return self;
 }

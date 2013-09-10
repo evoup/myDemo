@@ -10,6 +10,8 @@ CCLabelTTF *_moneyLabel;
     CCSprite *_playerUnit;
     CCAction *_walkAction;
     CCAction *_moveAction;
+    CCSprite *_enemy3Unit;
+    CCAction *_walkAction1;
     
     /*
     CCSprite *_jzeUnit;
@@ -29,10 +31,14 @@ CCLabelTTF *_moneyLabel;
 @property (nonatomic, retain) CCSprite *playerUnit;
 @property (nonatomic, retain) CCAction *walkAction;
 @property (nonatomic, retain) CCAction *moveAction;
+@property (nonatomic, retain) CCSprite *e3Unit;
+@property (nonatomic, retain) CCAction *walkAction1;
 
+/*
 @property (nonatomic, retain) CCSprite *jzeUnit;
 @property (nonatomic, retain) CCAction *jzewalkAction;
 @property (nonatomic, retain) CCAction *jzemoveAction;
+*/
 
 @property (nonatomic, retain) CCTMXTiledMap *tileMap;
 @property (nonatomic, retain) CCTMXLayer *background;
