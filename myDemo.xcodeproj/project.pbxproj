@@ -63,6 +63,7 @@
 		50F414F01069373D002A0D5E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F414EC1069373D002A0D5E /* Default.png */; };
 		50F414F11069373D002A0D5E /* fps_images.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F414ED1069373D002A0D5E /* fps_images.png */; };
 		50F414F21069373D002A0D5E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F414EE1069373D002A0D5E /* Icon.png */; };
+		64028C5A17E04E8C005827FE /* enemyClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 64028C5917E04E8C005827FE /* enemyClass.m */; };
 		643F64DF17DF1B0C00663444 /* enemyx.png in Resources */ = {isa = PBXBuildFile; fileRef = 643F64DD17DF1B0C00663444 /* enemyx.png */; };
 		643F64E017DF1B0C00663444 /* enemyx3.plist in Resources */ = {isa = PBXBuildFile; fileRef = 643F64DE17DF1B0C00663444 /* enemyx3.plist */; };
 		645A1BBB1731613700B8AD82 /* ani_jze.plist in Resources */ = {isa = PBXBuildFile; fileRef = 645A1BB81731613700B8AD82 /* ani_jze.plist */; };
@@ -338,6 +339,8 @@
 		50F414ED1069373D002A0D5E /* fps_images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fps_images.png; sourceTree = "<group>"; };
 		50F414EE1069373D002A0D5E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		50F414EF1069373D002A0D5E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64028C5817E04E8C005827FE /* enemyClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = enemyClass.h; sourceTree = "<group>"; };
+		64028C5917E04E8C005827FE /* enemyClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = enemyClass.m; sourceTree = "<group>"; };
 		643F64DD17DF1B0C00663444 /* enemyx.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemyx.png; sourceTree = "<group>"; };
 		643F64DE17DF1B0C00663444 /* enemyx3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = enemyx3.plist; sourceTree = "<group>"; };
 		645A1BB81731613700B8AD82 /* ani_jze.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ani_jze.plist; sourceTree = "<group>"; };
@@ -638,6 +641,8 @@
 		2D500B1D0D5A766B00DBA0E3 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				64028C5817E04E8C005827FE /* enemyClass.h */,
+				64028C5917E04E8C005827FE /* enemyClass.m */,
 				ED77495F162C40E0002F82C5 /* DataModel.h */,
 				ED774960162C40E0002F82C5 /* DataModel.m */,
 				ED4B3D2B15725D88001BACF9 /* myDemoAppDelegate.h */,
@@ -1254,6 +1259,7 @@
 				ED4B3D2F15725D88001BACF9 /* myDemoAppDelegate.m in Sources */,
 				ED4B3D3015725D88001BACF9 /* HelloWorldScene.m in Sources */,
 				ED774961162C40E0002F82C5 /* DataModel.m in Sources */,
+				64028C5A17E04E8C005827FE /* enemyClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
