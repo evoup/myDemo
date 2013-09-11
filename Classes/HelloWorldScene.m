@@ -6,6 +6,7 @@
 // Import the interfaces
 #import "HelloWorldScene.h"
 #import "DataModel.h"
+#import "EnemyClass.h"
 
 // HelloWorld implementation
 @implementation HelloWorld
@@ -82,7 +83,8 @@
         //[self addChild:player z:2];
         [[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
         _players = [[NSMutableArray alloc] init];
-        
+        id enemyx = [EnemyClass new];
+        [enemyx spriteUnit];
 	}
     [self schedule:@selector(gameLogic:) interval:3.0];
     
