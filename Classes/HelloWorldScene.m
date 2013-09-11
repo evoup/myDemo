@@ -34,7 +34,7 @@
 	//[scene addChild: layer];
     [scene addChild: layer z:1];
 
-    DataModel *dm = [DataModel getModel];
+    //DataModel *dm = [DataModel getModel];
     //dm._gameLayer = layer;
 	
 	// return the scene
@@ -64,7 +64,7 @@
         self.background.anchorPoint = ccp(0, 0);
         [self addChild:_tileMap z:2];
         _tileMap.scale = 0.7;
-        CGSize winSize = [[CCDirector sharedDirector] winSize];   
+        //CGSize winSize = [[CCDirector sharedDirector] winSize];
         /*{{{map background绿色背景*/
         CCSprite *realBackground = [CCSprite spriteWithFile:@"map_b0.png"];
         realBackground.position = ccp(120, 120);
