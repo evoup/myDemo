@@ -1,6 +1,7 @@
 //
 // enemy class 
 //
+#import "cocos2d.h"
 @interface EnemyClass : NSObject {
     CCSprite *_spriteUnit;
     CCAction *_spriteWalkAction;
@@ -9,9 +10,7 @@
 @property (nonatomic, retain) CCAction *spriteWalkAction;
 
 
--(void)initWithSynthesize (CCSprite *)_spu (CCAction *)_spwa
-{
-    @synthesize spriteUnit = _spu; 
-    @synthesize spriteUnit = _spwa; 
-}
-@end
+-(void)initWithSynthesize;
+/*-(CCAction *) －spriteＷalkAction;
+*/
+ @end
