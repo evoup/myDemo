@@ -83,9 +83,9 @@
         //[self addChild:player z:2];
         [[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
         _players = [[NSMutableArray alloc] init];
-        id enemyx = [EnemyClass new];
+        //id enemyx = [EnemyClass new];
         //[enemyx spriteUnit];
-        [enemyx addSpriteFrames:@"enemyx3.plist" pic:@"enemyx.png" classId:self zIndex:3];
+        //[enemyx addSpriteFrames:@"enemyx3.plist" pic:@"enemyx.png" classId:self zIndex:3];
 	}
     [self schedule:@selector(gameLogic:) interval:3.0];
     
@@ -184,6 +184,33 @@
         [target setPosition:ccp(target.position.x+12, target.position.y)];
     }
 }
+
+-(void)initEnemy {
+
+}
+
+-(void)addEnemy {
+    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:
+     @"AnimPlayerUnit01.plist"];
+    CCSpriteBatchNode *spriteSheet = [CCSpriteBatchNode batchNodeWithFile:@"AnimPlayerUnit01.png"];
+    [self addChild:spriteSheet z:6];
+    NSMutableArray *walkAnimFrames = [NSMutableArray array];
+    for(int j = 0; j <= 1; ++j) {
+        [walkAnimFrames addObject:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"playerUnit01_0%d.png", j]]];
+    }
+    CCAnimation *walkAnim = [CCAnimation animationWithFrames:walkAnimFrames delay:0.1f];
+
+    CCSprite * spriteUnit = [CCSprite spriteWithSpriteFrameName:@"playerUnit01_00.png"];
+    CCAction * spriteWalkAction = [CCRepeatForever actionWithAction:
+                       [CCAnimate actionWithAnimation:walkAnim restoreOriginalFrame:NO]];
+    CGSize winSize = [[CCDirector sharedDirector] winSize];
+    spriteUnit.position = ccp(winSize.width/2+20+12, winSize.height/2);
+    //[spriteUnit runAction:spriteWalkAction];
+    [spriteUnit addChild:spriteUnit];
+    [_players addObject:spriteUnit];
+    CCLOG(@"enemy added");
+}
+
 -(void)addTarget {
     
     CCSprite *target = [CCSprite spriteWithFile:@"enemyUnit_9_00.png" 
@@ -228,6 +255,7 @@
 }
 
 -(void)gameLogic:(ccTime)dt {
+    [self addEnemy];
     [self addTarget];
 }
 
