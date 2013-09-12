@@ -84,7 +84,8 @@
         [[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
         _players = [[NSMutableArray alloc] init];
         id enemyx = [EnemyClass new];
-        [enemyx spriteUnit];
+        //[enemyx spriteUnit];
+        [enemyx addSpriteFrames:@"enemyx3.plist" pic:@"enemyx.png" classId:self zIndex:3];
 	}
     [self schedule:@selector(gameLogic:) interval:3.0];
     
