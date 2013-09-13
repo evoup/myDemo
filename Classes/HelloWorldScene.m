@@ -205,9 +205,10 @@
                        [CCAnimate actionWithAnimation:walkAnim restoreOriginalFrame:NO]];
     CGSize winSize = [[CCDirector sharedDirector] winSize];
     spriteUnit.position = ccp(winSize.width/2+20+12, winSize.height/2);
-    //[spriteUnit runAction:spriteWalkAction];
-    [spriteUnit addChild:spriteUnit];
-    [_players addObject:spriteUnit];
+    [spriteUnit runAction:spriteWalkAction];
+    //[spriteUnit addChild:spriteUnit];
+    //[_players addObject:spriteUnit];
+    [self addChild:spriteUnit z:6];
     CCLOG(@"enemy added");
 }
 
