@@ -276,7 +276,7 @@
 
 -(void)gameLogic:(ccTime)dt {
     [self addEnemy];
-    [self addTarget];
+    //[self addTarget];
 }
 
 
