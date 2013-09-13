@@ -59,21 +59,26 @@
 		
 		// add the label as a child to this Layer
 		//[self addChild: label];
-        self.tileMap = [CCTMXTiledMap tiledMapWithTMXFile:@"TileMap.tmx"];
-        self.background = [_tileMap layerNamed:@"Background"];
-        self.background.anchorPoint = ccp(0, 0);
-        [self addChild:_tileMap z:2];
-        _tileMap.scale = 0.7;
+        /* {{{ */
+        //self.tileMap = [CCTMXTiledMap tiledMapWithTMXFile:@"TileMap.tmx"];
+        //self.background = [_tileMap layerNamed:@"Background"];
+        //self.background.anchorPoint = ccp(0, 0);
+        //[self addChild:_tileMap z:2];
+        //_tileMap.scale = 0.7;
+        /* }}} */
         //CGSize winSize = [[CCDirector sharedDirector] winSize];
         /*{{{map background绿色背景*/
         CCSprite *realBackground = [CCSprite spriteWithFile:@"map_b0.png"];
-        realBackground.position = ccp(120, 120);
+        realBackground.position = ccp(100, 240);
+        //realBackground.scale = 1;
         [self addChild:realBackground z:0]; 
         /*}}}*/
         /*{{{startgate敌军出现的地方*/
-        CCSprite *startGate = [CCSprite spriteWithFile:@"object_starte.png"];
-        startGate.position = ccp(26, 94);
-        startGate.scale = 0.7;
+        //CCSprite *startGate = [CCSprite spriteWithFile:@"object_starte.png"];
+        //startGate.position = ccp(26, 94);
+        CCSprite *startGate = [CCSprite spriteWithFile:@"ec045.png"];
+        startGate.position = ccp(60, 200);
+        startGate.scale = 0.6;
         [self addChild:startGate z:4]; 
         /*}}}*/
         //CCSprite *player = [CCSprite spriteWithFile:@"playerUnit01.png"   

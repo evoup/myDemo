@@ -68,6 +68,7 @@
 		645A1BBB1731613700B8AD82 /* ani_jze.plist in Resources */ = {isa = PBXBuildFile; fileRef = 645A1BB81731613700B8AD82 /* ani_jze.plist */; };
 		645A1BBC1731613700B8AD82 /* ani_jze.png in Resources */ = {isa = PBXBuildFile; fileRef = 645A1BB91731613700B8AD82 /* ani_jze.png */; };
 		645A1BBD1731613700B8AD82 /* jze_000.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 645A1BBA1731613700B8AD82 /* jze_000.jpg */; };
+		645D8FB817E2D96800F7DADE /* ec045.png in Resources */ = {isa = PBXBuildFile; fileRef = 645D8FB717E2D96800F7DADE /* ec045.png */; };
 		646BA79517E061340000228C /* EnemyClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 646BA79417E061340000228C /* EnemyClass.m */; };
 		DC6640030F83B3EA000B3E49 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6640020F83B3EA000B3E49 /* AudioToolbox.framework */; };
 		DC6640050F83B3EA000B3E49 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6640040F83B3EA000B3E49 /* OpenAL.framework */; };
@@ -344,6 +345,7 @@
 		645A1BB81731613700B8AD82 /* ani_jze.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ani_jze.plist; sourceTree = "<group>"; };
 		645A1BB91731613700B8AD82 /* ani_jze.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ani_jze.png; sourceTree = "<group>"; };
 		645A1BBA1731613700B8AD82 /* jze_000.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = jze_000.jpg; sourceTree = "<group>"; };
+		645D8FB717E2D96800F7DADE /* ec045.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ec045.png; sourceTree = "<group>"; };
 		646BA79317E061340000228C /* EnemyClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemyClass.h; sourceTree = "<group>"; };
 		646BA79417E061340000228C /* EnemyClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnemyClass.m; sourceTree = "<group>"; };
 		DC6640020F83B3EA000B3E49 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -758,6 +760,7 @@
 		50F414EB1069373D002A0D5E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				645D8FB717E2D96800F7DADE /* ec045.png */,
 				643F64DD17DF1B0C00663444 /* enemyx.png */,
 				643F64DE17DF1B0C00663444 /* enemyx3.plist */,
 				645A1BB81731613700B8AD82 /* ani_jze.plist */,
@@ -1229,6 +1232,7 @@
 				645A1BBD1731613700B8AD82 /* jze_000.jpg in Resources */,
 				643F64DF17DF1B0C00663444 /* enemyx.png in Resources */,
 				643F64E017DF1B0C00663444 /* enemyx3.plist in Resources */,
+				645D8FB817E2D96800F7DADE /* ec045.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
