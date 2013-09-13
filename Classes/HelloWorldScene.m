@@ -191,16 +191,16 @@
 
 -(void)addEnemy {
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:
-     @"AnimPlayerUnit01.plist"];
-    CCSpriteBatchNode *spriteSheet = [CCSpriteBatchNode batchNodeWithFile:@"AnimPlayerUnit01.png"];
+     @"enemyx3.plist"];
+    CCSpriteBatchNode *spriteSheet = [CCSpriteBatchNode batchNodeWithFile:@"enemyx_00.png"];
     [self addChild:spriteSheet z:6];
     NSMutableArray *walkAnimFrames = [NSMutableArray array];
-    for(int j = 0; j <= 1; ++j) {
-        [walkAnimFrames addObject:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"playerUnit01_0%d.png", j]]];
+    for(int j = 0; j <= 2; ++j) {
+        [walkAnimFrames addObject:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"enemyx_0%d.png", j]]];
     }
     CCAnimation *walkAnim = [CCAnimation animationWithFrames:walkAnimFrames delay:0.1f];
 
-    CCSprite * spriteUnit = [CCSprite spriteWithSpriteFrameName:@"playerUnit01_00.png"];
+    CCSprite * spriteUnit = [CCSprite spriteWithSpriteFrameName:@"enemyx_00.png"];
     CCAction * spriteWalkAction = [CCRepeatForever actionWithAction:
                        [CCAnimate actionWithAnimation:walkAnim restoreOriginalFrame:NO]];
     CGSize winSize = [[CCDirector sharedDirector] winSize];
