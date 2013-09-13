@@ -180,7 +180,7 @@
 }
 
 - (void)starButtonTapped:(id)sender {
-    [_label setString:@"生产PHP农民工"];
+    [_label setString:@"生产加倍大汉"];
     for (CCSprite *target in _players) {
         [target setPosition:ccp(target.position.x-12, target.position.y)];
     }
