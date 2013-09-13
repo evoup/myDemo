@@ -206,7 +206,8 @@
     CGSize winSize = [[CCDirector sharedDirector] winSize];
     spriteUnit.position = ccp(winSize.width/2+20+12, winSize.height/2);
     [spriteUnit runAction:spriteWalkAction];
-    int actualY=spriteUnit.contentSize.height/2+100;
+    //int actualY=spriteUnit.contentSize.height/2+100;
+    int actualY=winSize.height/2;
     int minDuration =2.0;
     int maxDuration =4.0;
     int rangeDuration = maxDuration - minDuration;
