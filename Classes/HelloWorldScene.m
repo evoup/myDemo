@@ -158,6 +158,7 @@
     [_players addObject:_playerUnit];
     /* }}} */
     /* {{{ TODO这里要封装成一个方法*/
+#if 0
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:
      @"enemyx3.plist"];
     CCSpriteBatchNode *spriteSheet1 = [CCSpriteBatchNode batchNodeWithFile:@"enemyx.png"];
@@ -173,6 +174,7 @@
     _enemy3Unit.position = ccp(winSize.width/2+20, winSize.height/2);
     [_enemy3Unit runAction:_walkAction1];
     [spriteSheet1 addChild:_enemy3Unit];
+#endif
     /* }}} */
 	return self;
 }
@@ -203,18 +205,18 @@
     for(int j = 0; j <= 2; ++j) {
         [walkAnimFrames addObject:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"enemyx_0%d.png", j]]];
     }
-    CCAnimation *walkAnim = [CCAnimation animationWithFrames:walkAnimFrames delay:0.1f];
+    CCAnimation *walkAnim = [CCAnimation animationWithFrames:walkAnimFrames delay:0.3f];
 
     CCSprite * spriteUnit = [CCSprite spriteWithSpriteFrameName:@"enemyx_00.png"];
     CCAction * spriteWalkAction = [CCRepeatForever actionWithAction:
                        [CCAnimate actionWithAnimation:walkAnim restoreOriginalFrame:NO]];
     CGSize winSize = [[CCDirector sharedDirector] winSize];
-    spriteUnit.position = ccp(winSize.width/2+20+12, winSize.height/2);
+    spriteUnit.position = ccp(winSize.width, winSize.height/2);
     [spriteUnit runAction:spriteWalkAction];
     //int actualY=spriteUnit.contentSize.height/2+100;
     int actualY=winSize.height/2;
-    int minDuration =2.0;
-    int maxDuration =4.0;
+    int minDuration =4.0;
+    int maxDuration =8.0;
     int rangeDuration = maxDuration - minDuration;
     int actualDuration = (arc4random() % rangeDuration) + minDuration;
     actualDuration=actualDuration*4;
