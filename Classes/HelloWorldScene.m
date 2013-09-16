@@ -179,18 +179,28 @@
 	return self;
 }
 
-- (void)starButtonTapped:(id)sender {
-    [_label setString:@"生产加倍大汉"];
-    for (CCSprite *target in _players) {
-        [target setPosition:ccp(target.position.x-12, target.position.y)];
+#if 0
+-(void) changeAnimation:(NSString*)name forTime:(int) times {
+
+    if(currentAnimation != @"attack" )
+    {
+        CCFiniteTimeAction *action = [CCAnimate actionWithAnimation:[self animationByName:name]];
+        CCRepeat *repeatAction = [CCRepeat actionWithAction:action times:1];
+        if(name == @"attack") {
+            id doneAttacking  = [CCCallFunc actionWithTarget:self selector:@selector(onDoneAttacking)];
+            [self runAction:[CCSequence actionOne:repeatAction two:doneAttacking]];
+        }
+        else {
+            [self runAction:repeatAction];
+        }
+        currentAnimation = name;
     }
 }
-- (void)soldierButtonTapped:(id)sender {
-    [_label setString:@"生产PHP架构师"];
-    for (CCSprite *target in _players) {
-        [target setPosition:ccp(target.position.x+12, target.position.y)];
-    }
+
+-(void) onDoneAttacking {
+    currentAnimation = @"idle";
 }
+#endif
 
 -(void)initEnemy {
 
