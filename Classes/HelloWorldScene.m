@@ -192,9 +192,9 @@
     }
 }
 
--(void) CallBack3:(CCSprite *)sender data:(void*)data {
-    int x = sender.position.x;
-    NSLog(@"[in CallBack][x:%d]",x);
+-(void) CallBack3:(id)sender data:(void*)data {
+    CCSprite *sp = (CCSprite *)sender;
+    NSLog(@"[in CallBack][x:%d]",sp.position.x);
     [sender stopAllActions];
     [sender runAction:[CCTintBy actionWithDuration:(NSInteger)data red:255 green:0 blue:255]];
 }
