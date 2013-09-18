@@ -192,18 +192,10 @@
     }
 }
 
--(void)initEnemy {
-
-}
-
-- (void) onCallFunc:(CCSprite *)spunit spAnim:(CCAnimation *)spanim{ 
-    [spunit stopAllActions];
-    [spunit runAction:[CCAnimate actionWithAnimation:spanim]];
-}
-
-    
--(void) CallBack3:(id)sender data:(void*)data {
-    CCLOG(@"in CallBack1");
+-(void) CallBack3:(CCSprite *)sender data:(void*)data {
+    int x = sender.position.x;
+    NSLog(@"[in CallBack][x:%d]",x);
+    [sender stopAllActions];
     [sender runAction:[CCTintBy actionWithDuration:(NSInteger)data red:255 green:0 blue:255]];
 }
 
@@ -231,8 +223,6 @@
     CGSize winSize = [[CCDirector sharedDirector] winSize];
     spriteUnit.position = ccp(winSize.width, winSize.height/2);
     [spriteUnit runAction:spriteWalkAction];
-    //[spriteUnit runAction:spriteAttackAction];
-    //CCCallFunc * func = [CCCallFunc actionWithTarget:self selector:@selector(onCallFunc:spriteUnit:spriteWalkAction:)]; 
     CGSize s = [[CCDirector sharedDirector] winSize]; 
     CGPoint p = ccp(s.width/2, 50);
     // 创建5个动作
