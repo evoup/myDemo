@@ -179,31 +179,32 @@
 	return self;
 }
 
-#if 0
--(void) changeAnimation:(NSString*)name forTime:(int) times {
-
-    if(currentAnimation != @"attack" )
-    {
-        CCFiniteTimeAction *action = [CCAnimate actionWithAnimation:[self animationByName:name]];
-        CCRepeat *repeatAction = [CCRepeat actionWithAction:action times:1];
-        if(name == @"attack") {
-            id doneAttacking  = [CCCallFunc actionWithTarget:self selector:@selector(onDoneAttacking)];
-            [self runAction:[CCSequence actionOne:repeatAction two:doneAttacking]];
-        }
-        else {
-            [self runAction:repeatAction];
-        }
-        currentAnimation = name;
+- (void)starButtonTapped:(id)sender {
+    [_label setString:@"生产加倍大汉"];
+    for (CCSprite *target in _players) {
+        [target setPosition:ccp(target.position.x-12, target.position.y)];
+    }
+}
+- (void)soldierButtonTapped:(id)sender {
+    [_label setString:@"生产PHP架构师"];
+    for (CCSprite *target in _players) {
+        [target setPosition:ccp(target.position.x+12, target.position.y)];
     }
 }
 
--(void) onDoneAttacking {
-    currentAnimation = @"idle";
-}
-#endif
-
 -(void)initEnemy {
 
+}
+
+- (void) onCallFunc:(CCSprite *)spunit spAnim:(CCAnimation *)spanim{ 
+    [spunit stopAllActions];
+    [spunit runAction:[CCAnimate actionWithAnimation:spanim]];
+}
+
+    
+-(void) CallBack3:(id)sender data:(void*)data {
+    CCLOG(@"in CallBack1");
+    [sender runAction:[CCTintBy actionWithDuration:(NSInteger)data red:255 green:0 blue:255]];
 }
 
 -(void)addEnemy {
@@ -212,17 +213,38 @@
     CCSpriteBatchNode *spriteSheet = [CCSpriteBatchNode batchNodeWithFile:@"enemyx_00.png"];
     [self addChild:spriteSheet z:6];
     NSMutableArray *walkAnimFrames = [NSMutableArray array];
+    NSMutableArray *attackAnimFrames = [NSMutableArray array];
     for(int j = 0; j <= 2; ++j) {
         [walkAnimFrames addObject:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"enemyx_0%d.png", j]]];
     }
+    for(int j = 3; j<=7; ++j) {
+        [attackAnimFrames addObject:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"enemyx_0%d.png", j]]];
+    }
     CCAnimation *walkAnim = [CCAnimation animationWithFrames:walkAnimFrames delay:0.3f];
+    CCAnimation *attackAnim = [CCAnimation animationWithFrames:attackAnimFrames delay:0.3f];
 
     CCSprite * spriteUnit = [CCSprite spriteWithSpriteFrameName:@"enemyx_00.png"];
     CCAction * spriteWalkAction = [CCRepeatForever actionWithAction:
                        [CCAnimate actionWithAnimation:walkAnim restoreOriginalFrame:NO]];
+    CCAction * spriteAttackAction = [CCRepeatForever actionWithAction:
+                       [CCAnimate actionWithAnimation:attackAnim restoreOriginalFrame:NO]];
     CGSize winSize = [[CCDirector sharedDirector] winSize];
     spriteUnit.position = ccp(winSize.width, winSize.height/2);
     [spriteUnit runAction:spriteWalkAction];
+    //[spriteUnit runAction:spriteAttackAction];
+    //CCCallFunc * func = [CCCallFunc actionWithTarget:self selector:@selector(onCallFunc:spriteUnit:spriteWalkAction:)]; 
+    CGSize s = [[CCDirector sharedDirector] winSize]; 
+    CGPoint p = ccp(s.width/2, 50);
+    // 创建5个动作
+    id ac0 = [spriteUnit runAction:[CCPlace actionWithPosition:p]];
+    id ac1 = [CCMoveTo actionWithDuration:2 position:ccp(s.width - 50, s.height - 50)];
+    id ac2 = [CCJumpTo actionWithDuration:2 position:ccp(150, 50) height:30 jumps:5];
+    id ac3 = [CCBlink actionWithDuration:2 blinks:3];
+    id ac4 = [CCScaleTo actionWithDuration:1 scale:4];
+    //id ac5 = [CCTintBy actionWithDuration:0.5 red:0 green:255 blue:255];
+    //id acf = [CCCallFunc actionWithTarget:self selector:@selector(CallBack1:spriteUnit)];
+    id acf = [CCCallFuncND actionWithTarget:self selector:@selector(CallBack3:data:) data:(void*)2]; 
+    [spriteUnit runAction:[CCSequence actions:ac0, ac1, ac2, ac3, ac4, ac0, acf, nil]];
     //int actualY=spriteUnit.contentSize.height/2+100;
     int actualY=winSize.height/2;
     int minDuration =4.0;
