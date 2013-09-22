@@ -205,7 +205,7 @@
 -(void)addEnemy {
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:
      @"enemyx3.plist"];
-    CCSpriteBatchNode *spriteSheet = [CCSpriteBatchNode batchNodeWithFile:@"enemyx_00.png"];
+    CCSpriteBatchNode *spriteSheet = [CCSpriteBatchNode batchNodeWithFile:@"enemyx_1.png"];
     [self addChild:spriteSheet z:6];
     NSMutableArray *walkAnimFrames = [NSMutableArray array];
     NSMutableArray *attackAnimFrames = [NSMutableArray array];
@@ -227,7 +227,9 @@
     spriteUnit.position = ccp(winSize.width, winSize.height/2);
     [spriteUnit runAction:spriteWalkAction];
     CGSize s = [[CCDirector sharedDirector] winSize]; 
+    //CGPoint p = ccp(s.width/2, 170);
     CGPoint p = ccp(s.width/2, 170);
+#if 0 
     // 创建5个动作
     id ac0 = [spriteUnit runAction:[CCPlace actionWithPosition:p]];
     id ac1 = [CCMoveTo actionWithDuration:2 position:ccp(s.width - 50, s.height - 50)];
@@ -238,6 +240,10 @@
     //id acf = [CCCallFunc actionWithTarget:self selector:@selector(CallBack1:spriteUnit)];
     id acf = [CCCallFuncND actionWithTarget:self selector:@selector(CallBack3:data:) data:(void*)2]; 
     [spriteUnit runAction:[CCSequence actions:ac0, ac1, ac2, ac3, ac4, ac0, acf, nil]];
+#endif
+    //id ac0 = [spriteUnit runAction:[CCPlace actionWithPosition:p]];
+    //id ac1 = [CCMoveTo actionWithDuration:2 position:ccp(100, s.height - 50)];
+    //[spriteUnit runAction:[CCSequence actions:ac0, ac1, nil]];
     //int actualY=spriteUnit.contentSize.height/2+100;
     int actualY=winSize.height/2;
     int minDuration =4.0;
@@ -313,6 +319,11 @@
             CCLOG(@"p position x:%f", pl.position.x);
         for (CCSprite *en in _enemys) {
             CCLOG(@"e position x:%f", en.position.x);
+            if (en.position.x<=pl.position.x+40) { //cannot exceed player 
+                en.position=ccp(pl.position.x+40,en.position.y);
+                [en stopAllActions];
+                //[en runAction:];
+            }
         }
     }
 } 
