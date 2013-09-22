@@ -12,6 +12,14 @@ CCLabelTTF *_moneyLabel;
     CCAction *_moveAction;
     CCSprite *_enemy3Unit;
     CCAction *_walkAction1;
+
+    CCSpriteBatchNode *_spriteSheetEx;
+    NSMutableArray *_walkAnimFrames;
+    CCAnimation *_walkAnim;
+    CCAnimation *_attackAnim;
+    NSMutableArray *_attackAnimFrames;
+    CCAction *_spriteWalkAction;
+    CCAction *_spriteAttackAction;
     
     /*
     CCSprite *_jzeUnit;
@@ -23,6 +31,7 @@ CCLabelTTF *_moneyLabel;
     CCSprite * selSprite;
     NSMutableArray *_players;
     NSMutableArray *_enemys;
+    NSMutableArray *_enemysActs;
     CCTMXTiledMap *_tileMap;
     CCTMXLayer *_background;  
     int _currentLevel;

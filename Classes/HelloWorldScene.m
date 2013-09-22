@@ -90,6 +90,7 @@
         [[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
         _players = [[NSMutableArray alloc] init];
         _enemys = [[NSMutableArray alloc] init];
+        _enemysActs = [[NSMutableArray alloc] init];
         //id enemyx = [EnemyClass new];
         //[enemyx spriteUnit];
         //[enemyx addSpriteFrames:@"enemyx3.plist" pic:@"enemyx.png" classId:self zIndex:3];
@@ -205,27 +206,28 @@
 -(void)addEnemy {
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:
      @"enemyx3.plist"];
-    CCSpriteBatchNode *spriteSheet = [CCSpriteBatchNode batchNodeWithFile:@"enemyx_1.png"];
-    [self addChild:spriteSheet z:6];
-    NSMutableArray *walkAnimFrames = [NSMutableArray array];
-    NSMutableArray *attackAnimFrames = [NSMutableArray array];
+    //CCSpriteBatchNode *spriteSheet = [CCSpriteBatchNode batchNodeWithFile:@"enemyx_1.png"];
+    _spriteSheetEx = [CCSpriteBatchNode batchNodeWithFile:@"enemyx_1.png"];
+    [self addChild:_spriteSheetEx z:6];
+    _walkAnimFrames = [NSMutableArray array];
+    _attackAnimFrames = [NSMutableArray array];
     for(int j = 0; j <= 2; ++j) {
-        [walkAnimFrames addObject:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"enemyx_0%d.png", j]]];
+        [_walkAnimFrames addObject:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"enemyx_0%d.png", j]]];
     }
     for(int j = 3; j<=7; ++j) {
-        [attackAnimFrames addObject:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"enemyx_0%d.png", j]]];
+        [_attackAnimFrames addObject:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"enemyx_0%d.png", j]]];
     }
-    CCAnimation *walkAnim = [CCAnimation animationWithFrames:walkAnimFrames delay:0.3f];
-    CCAnimation *attackAnim = [CCAnimation animationWithFrames:attackAnimFrames delay:0.3f];
+    _walkAnim = [CCAnimation animationWithFrames:_walkAnimFrames delay:0.3f];
+    _attackAnim = [CCAnimation animationWithFrames:_attackAnimFrames delay:0.3f];
 
     CCSprite * spriteUnit = [CCSprite spriteWithSpriteFrameName:@"enemyx_00.png"];
-    CCAction * spriteWalkAction = [CCRepeatForever actionWithAction:
-                       [CCAnimate actionWithAnimation:walkAnim restoreOriginalFrame:NO]];
-    CCAction * spriteAttackAction = [CCRepeatForever actionWithAction:
-                       [CCAnimate actionWithAnimation:attackAnim restoreOriginalFrame:NO]];
+    _spriteWalkAction = [CCRepeatForever actionWithAction:
+                       [CCAnimate actionWithAnimation:_walkAnim restoreOriginalFrame:NO]];
+    _spriteAttackAction = [CCRepeatForever actionWithAction:
+                       [CCAnimate actionWithAnimation:_attackAnim restoreOriginalFrame:NO]];
     CGSize winSize = [[CCDirector sharedDirector] winSize];
     spriteUnit.position = ccp(winSize.width, winSize.height/2);
-    [spriteUnit runAction:spriteWalkAction];
+    [spriteUnit runAction:_spriteWalkAction];
     CGSize s = [[CCDirector sharedDirector] winSize]; 
     //CGPoint p = ccp(s.width/2, 170);
     CGPoint p = ccp(s.width/2, 170);
@@ -262,6 +264,11 @@
     //[_players addObject:spriteUnit];
     [self addChild:spriteUnit z:6];
     [_enemys addObject:spriteUnit];
+    NSString *actId = [[NSString alloc] init];
+    //NSString *actId = @"walk"; 
+    actId = @"walk";
+    NSLog(@"actId:%@",actId);
+    [_enemysActs addObject:actId];
     CCLOG(@"enemy added");
 }
 
@@ -317,12 +324,26 @@
     NSMutableArray *emToDelete = [[NSMutableArray alloc] init];
     for (CCSprite *pl in _players) {
             CCLOG(@"p position x:%f", pl.position.x);
-        for (CCSprite *en in _enemys) {
+        //for (CCSprite *en in _enemys) {
+        for (int i=0;i<[_enemys count];i++) {
+            CCSprite *en=[_enemys objectAtIndex:i];
+            NSString *current_action_id = [_enemysActs objectAtIndex:i];
             CCLOG(@"e position x:%f", en.position.x);
+            CCLOG(@"current_action_id:%s", current_action_id);
             if (en.position.x<=pl.position.x+40) { //cannot exceed player 
                 en.position=ccp(pl.position.x+40,en.position.y);
-                [en stopAllActions];
-                //[en runAction:];
+                if (current_action_id==@"walk") {
+                    _attackAnimFrames = [NSMutableArray array];
+                    for(int j = 3; j<=7; ++j) {
+                        [_attackAnimFrames addObject:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"enemyx_0%d.png", j]]];
+                    }
+                    _attackAnim = [CCAnimation animationWithFrames:_attackAnimFrames delay:0.3f];
+                    _spriteAttackAction = [CCRepeatForever actionWithAction:
+                    [CCAnimate actionWithAnimation:_attackAnim restoreOriginalFrame:NO]];
+                    [en runAction:_spriteAttackAction];
+                    NSString *attack_act_string = @"attack"; //change current action states to attack 
+                    [_enemysActs replaceObjectAtIndex:i withObject:attack_act_string];
+                }
             }
         }
     }
@@ -367,6 +388,8 @@
     _players = nil;
     [_enemys release];
     _enemys = nil;
+    //[_enemysActs release];
+    //_enemysActs = nil;
     // In dealloc
     self.playerUnit = nil;
     self.walkAction = nil;
