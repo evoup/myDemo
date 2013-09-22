@@ -224,7 +224,7 @@
     spriteUnit.position = ccp(winSize.width, winSize.height/2);
     [spriteUnit runAction:spriteWalkAction];
     CGSize s = [[CCDirector sharedDirector] winSize]; 
-    CGPoint p = ccp(s.width/2, 50);
+    CGPoint p = ccp(s.width/2, 170);
     // 创建5个动作
     id ac0 = [spriteUnit runAction:[CCPlace actionWithPosition:p]];
     id ac1 = [CCMoveTo actionWithDuration:2 position:ccp(s.width - 50, s.height - 50)];
