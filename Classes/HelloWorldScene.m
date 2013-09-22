@@ -88,6 +88,7 @@
         //[self addChild:player z:2];
         [[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
         _players = [[NSMutableArray alloc] init];
+        _enemys = [[NSMutableArray alloc] init];
         //id enemyx = [EnemyClass new];
         //[enemyx spriteUnit];
         //[enemyx addSpriteFrames:@"enemyx3.plist" pic:@"enemyx.png" classId:self zIndex:3];
@@ -330,6 +331,12 @@
     return TRUE; 
 }
 
+- (void) update:(ccTime)dt
+{
+    NSMutableArray *emToDelete = [[NSMutableArray alloc] init];
+    for (CCSprite *pl in _players) {
+    }
+} 
 
 // on "dealloc" you need to release all your retained objects
 - (void) dealloc
@@ -340,6 +347,8 @@
     _moneyLabel = nil;
     [_players release];
     _players = nil;
+    [_enemys release];
+    _enemys = nil;
     // In dealloc
     self.playerUnit = nil;
     self.walkAction = nil;

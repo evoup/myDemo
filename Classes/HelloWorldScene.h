@@ -22,6 +22,7 @@ CCLabelTTF *_moneyLabel;
     BOOL _moving;
     CCSprite * selSprite;
     NSMutableArray *_players;
+    NSMutableArray *_enemys;
     CCTMXTiledMap *_tileMap;
     CCTMXLayer *_background;  
     int _currentLevel;
