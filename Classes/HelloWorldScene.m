@@ -41,6 +41,7 @@
 	return scene;
 }
 
+
 // on "init" you need to initialize your instance
 -(id) init
 {
@@ -177,6 +178,7 @@
     [spriteSheet1 addChild:_enemy3Unit];
 #endif
     /* }}} */
+    [self schedule:@selector(update:)]; //每一桢检查是否接近碰撞，如果差不多则进行进行attack
 	return self;
 }
 
@@ -253,6 +255,7 @@
     //[spriteUnit addChild:spriteUnit];
     //[_players addObject:spriteUnit];
     [self addChild:spriteUnit z:6];
+    [_enemys addObject:spriteUnit];
     CCLOG(@"enemy added");
 }
 
@@ -304,6 +307,16 @@
     //[self addTarget];
 }
 
+- (void) update:(ccTime)dt {
+    NSMutableArray *emToDelete = [[NSMutableArray alloc] init];
+    for (CCSprite *pl in _players) {
+            CCLOG(@"p position x:%f", pl.position.x);
+        for (CCSprite *en in _enemys) {
+            CCLOG(@"e position x:%f", en.position.x);
+        }
+    }
+} 
+
 
 - (void)selectSpriteForTouch:(CGPoint)touchLocation {
     CCSprite * newSprite = nil;
@@ -331,12 +344,6 @@
     return TRUE; 
 }
 
-- (void) update:(ccTime)dt
-{
-    NSMutableArray *emToDelete = [[NSMutableArray alloc] init];
-    for (CCSprite *pl in _players) {
-    }
-} 
 
 // on "dealloc" you need to release all your retained objects
 - (void) dealloc
