@@ -330,7 +330,7 @@
             NSString *current_action_id = [_enemysActs objectAtIndex:i];
             CCLOG(@"e position x:%f", en.position.x);
             CCLOG(@"current_action_id:%s", current_action_id);
-            if (en.position.x<=pl.position.x+40) { //cannot exceed player 
+            if (en.position.x-pl.position.x<=40 && en.position.x-pl.position.x>=20) { //cannot exceed player 
                 en.position=ccp(pl.position.x+40,en.position.y);
                 if (current_action_id==@"walk") {
                     _attackAnimFrames = [NSMutableArray array];
@@ -344,6 +344,8 @@
                     NSString *attack_act_string = @"attack"; //change current action states to attack 
                     [_enemysActs replaceObjectAtIndex:i withObject:attack_act_string];
                 }
+            } else if (en.position.x<=pl.position.x) { //adjust range
+                en.position=ccp(pl.position.x+40,en.position.y);
             }
         }
     }
