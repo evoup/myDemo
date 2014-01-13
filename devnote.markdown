@@ -1,10 +1,10 @@
-Õû¸öÏîÄ¿Íê³Éµ½ÁË£¬¼ÓÔØÒ»¸öÖ÷½Ç¾«Áé£¬È»ºó²»¶Ï³öÏÖµÄµĞ¾üÓ¿ÏòÍæ¼Ò½øĞĞ¹¥»÷¡£
-ÏîÄ¿ÎÊÌâ£¬Ã»ÓĞ¿ØÖÆºÃÄÚ´æµÄÓÅ»¯¡£
+æ•´ä¸ªé¡¹ç›®å®Œæˆåˆ°äº†ï¼ŒåŠ è½½ä¸€ä¸ªä¸»è§’ç²¾çµï¼Œç„¶åä¸æ–­å‡ºç°çš„æ•Œå†›æ¶Œå‘ç©å®¶è¿›è¡Œæ”»å‡»ã€‚
+é¡¹ç›®é—®é¢˜ï¼Œæ²¡æœ‰æ§åˆ¶å¥½å†…å­˜çš„ä¼˜åŒ–ã€‚
 
-ÕûÌå³ÌĞò·ÖÎö£¬°üÀ¨objective-cÓï·¨µÄÚ¹ÊÍ¡£
+æ•´ä½“ç¨‹åºåˆ†æï¼ŒåŒ…æ‹¬objective-cè¯­æ³•çš„è¯ é‡Šã€‚
 
 
-Ê×ÏÈÊÇmain.m
+é¦–å…ˆæ˜¯main.m
 ```cpp
 #import <UIKit/UIKit.h>
 
@@ -15,10 +15,10 @@ int main(int argc, char *argv[]) {
         return retVal;
 }
 ```
-Õâ¸öÃ»Ê²Ã´ºÃËµµÄ£¬¾ÍÊÇCocoaµÄÒ»¸ö×Ô¶¯ÊÍ·Å³ØµÄ¸ÅÄî¡£myDemoAppDelegateÖ±½Ó¹ØÁªµ½Ò»¸ö½Ğ×ömyDemoAppDeligateµÄÎ¯ÍĞÀà
+è¿™ä¸ªæ²¡ä»€ä¹ˆå¥½è¯´çš„ï¼Œå°±æ˜¯Cocoaçš„ä¸€ä¸ªè‡ªåŠ¨é‡Šæ”¾æ± çš„æ¦‚å¿µã€‚myDemoAppDelegateç›´æ¥å…³è”åˆ°ä¸€ä¸ªå«åšmyDemoAppDeligateçš„å§”æ‰˜ç±»
 
 ---------------------------------------
-¸ÃÀàµÄÍ·ÎÄ¼şÖĞ
+è¯¥ç±»çš„å¤´æ–‡ä»¶ä¸­
 ```cpp
 // When you import this file, you import all the cocos2d classes
 #import "cocos2d.h"
@@ -70,14 +70,14 @@ CCLabelTTF *_moneyLabel;
 
 @end
 ```
-ÉêÃ÷ÁËĞèÒªÓÃµ½µÄui×é¼ş£¬ÈçCCLabelTTFµÄÖ¸Õë¡£
-È»ºóÊÇ½Ó¿ÚÓï·¨interface£¬Õâ¸öÔÚobjectiveÖĞÊÇ¶¨ÒåÒ»¸ö½Ó¿Ú£¬ÆäÊµ¾ÍÊÇC++µÄclass£¬µ«ÊÇÕâ¸öÍ¨³£·ÅÔÚÍ·ÎÄ¼şÀï£¬ÒòÎª½ÓÏÂÀ´»¹ÓĞimplementationÀ´ÕæÕıÆğ×÷ÓÃ£¬Ò²¾ÍÊÇC++ÀïµÄÈ¥ÊµÏÖ¡£
-¿ÉÒÔ¿´µ½ÔÚÀàÀïÓĞÈô¸É¸öCCSpriteºÍCCActionÒÑ¾­CCSpriteBatchNodeºÍMSMutableArrray£¬·Ö±ğÓÃÀ´×÷Îª¾«ÁéÀàÖ¸Õë¡¢¶¯×÷ÀàÖ¸Õë¡¢Åú´¦ÀíNodeÀàÖ¸ÕëºÍÊı×é¡£×¢ÒâÔÚcocos2d-xµÄ2.x°æ±¾ÖĞÒÑ¾­¸ÄÃûCCMutableArrayÎªCCArrayÁË¡£Ò»¸ö²¼¶ûÖµ_moving×÷ÎªÅĞ¶ÏÊÇ·ñÔÚÔË¶¯µÄ±ê¼Ç¡£È»ºóÓĞÒ»¸öCCTMXTiledmapÀ´Ê¹ÓÃtiledµØÍ¼±à¼­Æ÷±à¼­³öÀ´µÄµØÍ¼¡£ÒÑ¾­CCMXLayerÀ´»­±³¾°¡£_currentLevelÕâ¸öÔİÊ±Ã»ÓĞ×÷ÓÃ¡£ 
-½ÓÏÂÂíÉÏÊÇ½Ó¿ÚÖ®ºó±ØĞë¸úÉÏµÄobjective-c±ØĞëÓĞµÄretainÓï·¨£¬¼Ç×¡ÕâÊÇ×Ô¶¯¹ÜÀíÄÚ´æµÄ»úÖÆ,¾ÍÊÇÒªÇó¶ÔÏóµÄ±£Áô¼ÆÊıÆ÷ÊıÖµ+1¡£
-nonatomicÊÇ±íÊ¾ÊÇ»¥³â¡£propertyÔòÊÇËµÃ÷Ö§³ÖgetterºÍsetterµÄ·ÃÎÊÊôĞÔ¡£
+ç”³æ˜äº†éœ€è¦ç”¨åˆ°çš„uiç»„ä»¶ï¼Œå¦‚CCLabelTTFçš„æŒ‡é’ˆã€‚
+ç„¶åæ˜¯æ¥å£è¯­æ³•interfaceï¼Œè¿™ä¸ªåœ¨objectiveä¸­æ˜¯å®šä¹‰ä¸€ä¸ªæ¥å£ï¼Œå…¶å®å°±æ˜¯C++çš„classï¼Œä½†æ˜¯è¿™ä¸ªé€šå¸¸æ”¾åœ¨å¤´æ–‡ä»¶é‡Œï¼Œå› ä¸ºæ¥ä¸‹æ¥è¿˜æœ‰implementationæ¥çœŸæ­£èµ·ä½œç”¨ï¼Œä¹Ÿå°±æ˜¯C++é‡Œçš„å»å®ç°ã€‚
+å¯ä»¥çœ‹åˆ°åœ¨ç±»é‡Œæœ‰è‹¥å¹²ä¸ªCCSpriteå’ŒCCActionå·²ç»CCSpriteBatchNodeå’ŒMSMutableArrrayï¼Œåˆ†åˆ«ç”¨æ¥ä½œä¸ºç²¾çµç±»æŒ‡é’ˆã€åŠ¨ä½œç±»æŒ‡é’ˆã€æ‰¹å¤„ç†Nodeç±»æŒ‡é’ˆå’Œæ•°ç»„ã€‚æ³¨æ„åœ¨cocos2d-xçš„2.xç‰ˆæœ¬ä¸­å·²ç»æ”¹åCCMutableArrayä¸ºCCArrayäº†ã€‚ä¸€ä¸ªå¸ƒå°”å€¼_movingä½œä¸ºåˆ¤æ–­æ˜¯å¦åœ¨è¿åŠ¨çš„æ ‡è®°ã€‚ç„¶åæœ‰ä¸€ä¸ªCCTMXTiledmapæ¥ä½¿ç”¨tiledåœ°å›¾ç¼–è¾‘å™¨ç¼–è¾‘å‡ºæ¥çš„åœ°å›¾ã€‚å·²ç»CCMXLayeræ¥ç”»èƒŒæ™¯ã€‚_currentLevelè¿™ä¸ªæš‚æ—¶æ²¡æœ‰ä½œç”¨ã€‚ 
+æ¥ä¸‹é©¬ä¸Šæ˜¯æ¥å£ä¹‹åå¿…é¡»è·Ÿä¸Šçš„objective-cå¿…é¡»æœ‰çš„retainè¯­æ³•ï¼Œè®°ä½è¿™æ˜¯è‡ªåŠ¨ç®¡ç†å†…å­˜çš„æœºåˆ¶,å°±æ˜¯è¦æ±‚å¯¹è±¡çš„ä¿ç•™è®¡æ•°å™¨æ•°å€¼+1ã€‚
+nonatomicæ˜¯è¡¨ç¤ºæ˜¯äº’æ–¥ã€‚propertyåˆ™æ˜¯è¯´æ˜æ”¯æŒgetterå’Œsetterçš„è®¿é—®å±æ€§ã€‚
 
 ---------------------------------------
-½Ó×ÅÊÇmyDemoAppDelegate.m
+æ¥ç€æ˜¯myDemoAppDelegate.m
 ```cpp
 //
 // cocos2d Hello World example
@@ -129,12 +129,12 @@ nonatomicÊÇ±íÊ¾ÊÇ»¥³â¡£propertyÔòÊÇËµÃ÷Ö§³ÖgetterºÍsetterµÄ·ÃÎÊÊôĞÔ¡£
         // always call "super" init
         // Apple recommends to re-assign "self" with the "super" return value
     if( (self=[super initWithColor:ccc4(0,0,0,255)] )) {
-        /*{{{map backgroundÂÌÉ«±³¾°*/
+        /*{{{map backgroundç»¿è‰²èƒŒæ™¯*/
         CCSprite *realBackground = [CCSprite spriteWithFile:@"map_b0.png"];
         realBackground.position = ccp(100, 240);
         [self addChild:realBackground z:0]; 
         /*}}}*/
-        /*{{{startgateµĞ¾ü³öÏÖµÄµØ·½*/
+        /*{{{startgateæ•Œå†›å‡ºç°çš„åœ°æ–¹*/
         CCSprite *startGate = [CCSprite spriteWithFile:@"ec045.png"];
         startGate.position = ccp(60, 200);
         startGate.scale = 0.6;
@@ -151,7 +151,7 @@ nonatomicÊÇ±íÊ¾ÊÇ»¥³â¡£propertyÔòÊÇËµÃ÷Ö§³ÖgetterºÍsetterµÄ·ÃÎÊÊôĞÔ¡£
      */
     CGSize winSize = [[CCDirector sharedDirector] winSize];
     // Create a label for display purposes
-    _label = [[CCLabelTTF labelWithString:@"½¨ÔìµÄÏîÄ¿" 
+    _label = [[CCLabelTTF labelWithString:@"å»ºé€ çš„é¡¹ç›®" 
                                dimensions:CGSizeMake(420, 50) alignment:UITextAlignmentCenter 
                                  fontName:@"Arial" fontSize:28.0] retain];
     _label.position = ccp(winSize.width/2, 
@@ -160,7 +160,7 @@ nonatomicÊÇ±íÊ¾ÊÇ»¥³â¡£propertyÔòÊÇËµÃ÷Ö§³ÖgetterºÍsetterµÄ·ÃÎÊÊôĞÔ¡£
     /* }}} */
     /* {{{ money label
      */
-    _moneyLabel = [[CCLabelTTF labelWithString:@"½ğÇ®Êı:0"
+    _moneyLabel = [[CCLabelTTF labelWithString:@"é‡‘é’±æ•°:0"
                                 dimensions:CGSizeMake(420, 50) alignment:UITextAlignmentCenter 
                                 fontName:@"Arial" fontSize:20.0] retain];
     _moneyLabel.position = ccp(40, 
@@ -209,18 +209,18 @@ nonatomicÊÇ±íÊ¾ÊÇ»¥³â¡£propertyÔòÊÇËµÃ÷Ö§³ÖgetterºÍsetterµÄ·ÃÎÊÊôĞÔ¡£
     [spriteSheet addChild:_playerUnit];
     [_players addObject:_playerUnit];
     /* }}} */
-    [self schedule:@selector(update:)]; //Ã¿Ò»èå¼ì²éÊÇ·ñ½Ó½üÅö×²£¬Èç¹û²î²»¶àÔò½øĞĞ½øĞĞattack
+    [self schedule:@selector(update:)]; //æ¯ä¸€æ¡¢æ£€æŸ¥æ˜¯å¦æ¥è¿‘ç¢°æ’ï¼Œå¦‚æœå·®ä¸å¤šåˆ™è¿›è¡Œè¿›è¡Œattack
         return self;
 }
 
 - (void)starButtonTapped:(id)sender {
-    [_label setString:@"Éú²úÊ¿±ø"];
+    [_label setString:@"ç”Ÿäº§å£«å…µ"];
     for (CCSprite *target in _players) {
         [target setPosition:ccp(target.position.x-12, target.position.y)];
     }
 }
 - (void)soldierButtonTapped:(id)sender {
-    [_label setString:@"Éú²úPHP¼Ü¹¹Ê¦"];
+    [_label setString:@"ç”Ÿäº§PHPæ¶æ„å¸ˆ"];
     for (CCSprite *target in _players) {
         [target setPosition:ccp(target.position.x+12, target.position.y)];
     }
@@ -261,7 +261,7 @@ nonatomicÊÇ±íÊ¾ÊÇ»¥³â¡£propertyÔòÊÇËµÃ÷Ö§³ÖgetterºÍsetterµÄ·ÃÎÊÊôĞÔ¡£
     //CGPoint p = ccp(s.width/2, 170);
     CGPoint p = ccp(s.width/2, 170);
 #if 0 
-    // ´´½¨5¸ö¶¯×÷
+    // åˆ›å»º5ä¸ªåŠ¨ä½œ
     id ac0 = [spriteUnit runAction:[CCPlace actionWithPosition:p]];
     id ac1 = [CCMoveTo actionWithDuration:2 position:ccp(s.width - 50, s.height - 50)];
     id ac2 = [CCJumpTo actionWithDuration:2 position:ccp(150, 50) height:30 jumps:5];
@@ -300,10 +300,10 @@ nonatomicÊÇ±íÊ¾ÊÇ»¥³â¡£propertyÔòÊÇËµÃ÷Ö§³ÖgetterºÍsetterµÄ·ÃÎÊÊôĞÔ¡£
     
     CCSprite *target = [CCSprite spriteWithFile:@"enemyUnit_9_00.png" 
                                            rect:CGRectMake(0, 0, 115, 100)]; 
-    target.scale = 0.9; //target¾ÍÊÇµĞÈË
+    target.scale = 0.9; //targetå°±æ˜¯æ•Œäºº
     // Determine where to spawn the target along the Y axis
     CGSize winSize = [[CCDirector sharedDirector] winSize];
-    // Ò»Ö±ÔÚµØÃæ
+    // ä¸€ç›´åœ¨åœ°é¢
     int actualY=target.contentSize.height/2+100;
     
     // Create the target slightly off-screen along the right edge,
@@ -316,7 +316,7 @@ nonatomicÊÇ±íÊ¾ÊÇ»¥³â¡£propertyÔòÊÇËµÃ÷Ö§³ÖgetterºÍsetterµÄ·ÃÎÊÊôĞÔ¡£
     int maxDuration =4.0;
     int rangeDuration = maxDuration - minDuration;
     int actualDuration = (arc4random() % rangeDuration) + minDuration;
-    // ËÙ¶ÈÉÔÎ¢Âıµã£¬Ëş·À£¡
+    // é€Ÿåº¦ç¨å¾®æ…¢ç‚¹ï¼Œå¡”é˜²ï¼
     actualDuration=actualDuration*4;
     
     // Create the actions
@@ -329,7 +329,7 @@ nonatomicÊÇ±íÊ¾ÊÇ»¥³â¡£propertyÔòÊÇËµÃ÷Ö§³ÖgetterºÍsetterµÄ·ÃÎÊÊôĞÔ¡£
     
 }
 
-// ÔËĞĞÍêÉ¾³ı
+// è¿è¡Œå®Œåˆ é™¤
 -(void)spriteMoveFinished:(id)sender {
     CCSprite *sprite = (CCSprite *)sender;
     [self removeChild:sprite cleanup:YES];
@@ -422,33 +422,33 @@ nonatomicÊÇ±íÊ¾ÊÇ»¥³â¡£propertyÔòÊÇËµÃ÷Ö§³ÖgetterºÍsetterµÄ·ÃÎÊÊôĞÔ¡£
 }
 @end
 ```
-Ê×ÏÈÊÇ¼¸¸öÍ·ÎÄ¼şµÄÒıÈë£¬È»ºóÊÇimplementationÊµÏÖHelloWorld
-Õë¶Ô¸Õ¸Õ¶¨ÒåµÄ¼¸¸öÀà,synthesizeÕâ¸ö¹Ø¼ü×Ö½Ğ×öºÏ³É,ÎÒÃÇ³ÆÀà¶ÔÊµÀı±äÁ¿ºÏ³É·ÃÎÊÆ÷ÊôĞÔ¡£2¸öºÏ³ÉµÄÔªËØ¶¼ÔÚÍ·ÎÄ¼şÀï¶¨Òå£¬Ö»ÊÇºÏ³ÉÔÚÔ´ÎÄ¼şÀï,Êµ¼ÊºÍÓÎÏ·³ÌĞò´ò½»µÀµÄÊÇÊµÀı±äÁ¿¡£
+é¦–å…ˆæ˜¯å‡ ä¸ªå¤´æ–‡ä»¶çš„å¼•å…¥ï¼Œç„¶åæ˜¯implementationå®ç°HelloWorldã€‚
+é’ˆå¯¹åˆšåˆšå®šä¹‰çš„å‡ ä¸ªç±»,synthesizeè¿™ä¸ªå…³é”®å­—å«åšåˆæˆ,æˆ‘ä»¬ç§°ç±»å¯¹å®ä¾‹å˜é‡åˆæˆè®¿é—®å™¨å±æ€§ã€‚2ä¸ªåˆæˆçš„å…ƒç´ éƒ½åœ¨å¤´æ–‡ä»¶é‡Œå®šä¹‰ï¼Œåªæ˜¯åˆæˆåœ¨æºæ–‡ä»¶é‡Œ,å®é™…å’Œæ¸¸æˆç¨‹åºæ‰“äº¤é“çš„æ˜¯å®ä¾‹å˜é‡ã€‚
 
-È»ºó+(id) sceneÕâ¸öidÎªÒ»ÖÖ·ºĞÍÖ¸Õë¡£
-½Ó×Å¶¨ÒåCCSceneÀàÖ¸Õëscene,ÒòÎªhelloworld¼Ì³Ğ×ÔCCColorLayer£¬½Ó×ÅÖ±½Ó¶¨ÒåÕâ¸öCCColorLayerÖ¸Õëlayer
-ÔÙÂíÉÏÔÚ°Ñlayer¼Óµ½sceneÉÏÈ¥£¬ÕâÑù¾ÍĞÎ³ÉÁËÒ»¸öÓĞÉ«Í¼²ã¡£
+ç„¶å+(id) sceneè¿™ä¸ªidä¸ºä¸€ç§æ³›å‹æŒ‡é’ˆã€‚
+æ¥ç€å®šä¹‰CCSceneç±»æŒ‡é’ˆscene,å› ä¸ºhelloworldç»§æ‰¿è‡ªCCColorLayerï¼Œæ¥ç€ç›´æ¥å®šä¹‰è¿™ä¸ªCCColorLayeræŒ‡é’ˆlayerã€‚
+å†é©¬ä¸Šåœ¨æŠŠlayeråŠ åˆ°sceneä¸Šå»ï¼Œè¿™æ ·å°±å½¢æˆäº†ä¸€ä¸ªæœ‰è‰²å›¾å±‚ã€‚
 
-init·½·¨ÖĞ£¬Ö±½Ó°Ñ±³¾°Í¼¼ÓÔØµ½ÁËCCSpriteÖĞÈ¥£¬²¢µ÷Õû×ø±ê¡£
-CCSpriteÖÆÔìÍæ¼Ò³öÏÖµÄµØ·½µÄÍ¼Æ¬¡£
-È»ºó³õÊ¼»¯ÄÇĞ©Êı×é_playerºÍ_enemysºÍ_enemyActs¡£
-°ÑCCLabelTTFÉú³ÉµÄÎÄ×ÖÓÃself addChild·½·¨¼ÓÔØµ½Í¼²ãÉÏ¡£
-¶ÔÓÚmoneyÎÄ×ÖÒ²ÊÇÒ»ÑùµÄ²Ù×÷¡£
-½Ó×Å²ÉÓÃCCMenuItemImageº¯ÊıÖÆ×÷Ò»¸öbutton£¬Í¬ÑùÓÃself addChild·½·¨¼Óµ½layerÉÏ¡£¶ø»Øµ÷º¯ÊıÊÇÍ¨¹ı¸Ãº¯ÊıµÄ×îºóÒ»¸ö²ÎÊı
-selector:@selector(»Øµ÷º¯Êı:)ÊµÏÖµÄ¡£
-È»ºóÒª¼ÓÔØÒ»ÏµÁĞ¶¯×÷ĞòÁĞÁË£¬ÓÃCCSpriteBatchNodeÀ´¼ÓÔØ£¬µÃµ½Ò»¸öspriteSheet,ÓÉÓÚCCSpriteBatchNode¼Ì³Ğ×ÓCCNode£¬ËùÒÔÒ²¿ÉÒÔÓÃ¹ıself addChild¼Óµ½layerÉÏ¡£
-¶Ô¶¨ÒåºÃµÄÖ¡ÊıÄ¿£¬Ñ­»·¼ÓÔØµ½Ò»¸öÖ¡Êı×éÖĞ£¬Ö®ºóÓÃCCAnimationµÄanimationWithFrames·½·¨¼ÓÔØµ½CCAnimationµÄÖ¸ÕëwalkAnimÖĞ¡£
-Ö®ºó¶ÔwalkAction¶¯×÷£¬²ÅÆğCCRepeatForeverÀàµÄactionWithAction·½·¨¼ÓÔØwalkAnim
-½ÓÏÂÀ´¾Í¿ÉÒÔÖ¸µ¼Íæ¼Ò¾«ÁéÓÃCCSpriteµÄrunAction·½·¨¼ÓÔØ¶¯×÷ÁË¡£°Ñ¾«Áé¼Óµ½SpriteSheetÖĞ¡£Í¬Ê±°ÑÕâ¸ö¾«Áé¼Óµ½¾«ÁéÊı×éÖĞÈ¥¡£
-ÔÙÀ´ÊÇstarButtonTappedµÈ¼¸¸ö°´Å¥µÄ»Øµ÷º¯Êı¡£
+initæ–¹æ³•ä¸­ï¼Œç›´æ¥æŠŠèƒŒæ™¯å›¾åŠ è½½åˆ°äº†CCSpriteä¸­å»ï¼Œå¹¶è°ƒæ•´åæ ‡ã€‚
+CCSpriteåˆ¶é€ ç©å®¶å‡ºç°çš„åœ°æ–¹çš„å›¾ç‰‡ã€‚
+ç„¶ååˆå§‹åŒ–é‚£äº›æ•°ç»„_playerå’Œ_enemyså’Œ_enemyActsã€‚
+æŠŠCCLabelTTFç”Ÿæˆçš„æ–‡å­—ç”¨self addChildæ–¹æ³•åŠ è½½åˆ°å›¾å±‚ä¸Šã€‚
+å¯¹äºmoneyæ–‡å­—ä¹Ÿæ˜¯ä¸€æ ·çš„æ“ä½œã€‚
+æ¥ç€é‡‡ç”¨CCMenuItemImageå‡½æ•°åˆ¶ä½œä¸€ä¸ªbuttonï¼ŒåŒæ ·ç”¨self addChildæ–¹æ³•åŠ åˆ°layerä¸Šã€‚è€Œå›è°ƒå‡½æ•°æ˜¯é€šè¿‡è¯¥å‡½æ•°çš„æœ€åä¸€ä¸ªå‚æ•°ã€‚
+selector:@selector(å›è°ƒå‡½æ•°:)å®ç°çš„ã€‚
+ç„¶åè¦åŠ è½½ä¸€ç³»åˆ—åŠ¨ä½œåºåˆ—äº†ï¼Œç”¨CCSpriteBatchNodeæ¥åŠ è½½ï¼Œå¾—åˆ°ä¸€ä¸ªspriteSheet,ç”±äºCCSpriteBatchNodeç»§æ‰¿å­CCNodeï¼Œæ‰€ä»¥ä¹Ÿå¯ä»¥ç”¨è¿‡self addChildåŠ åˆ°layerä¸Šã€‚
+å¯¹å®šä¹‰å¥½çš„å¸§æ•°ç›®ï¼Œå¾ªç¯åŠ è½½åˆ°ä¸€ä¸ªå¸§æ•°ç»„ä¸­ï¼Œä¹‹åç”¨CCAnimationçš„animationWithFramesæ–¹æ³•åŠ è½½åˆ°CCAnimationçš„æŒ‡é’ˆwalkAnimä¸­ã€‚
+ä¹‹åå¯¹walkActionåŠ¨ä½œï¼Œæ‰èµ·CCRepeatForeverç±»çš„actionWithActionæ–¹æ³•åŠ è½½walkAnimã€‚
+æ¥ä¸‹æ¥å°±å¯ä»¥æŒ‡å¯¼ç©å®¶ç²¾çµç”¨CCSpriteçš„runActionæ–¹æ³•åŠ è½½åŠ¨ä½œäº†ã€‚æŠŠç²¾çµåŠ åˆ°SpriteSheetä¸­ã€‚åŒæ—¶æŠŠè¿™ä¸ªç²¾çµåŠ åˆ°ç²¾çµæ•°ç»„ä¸­å»ã€‚
+å†æ¥æ˜¯starButtonTappedç­‰å‡ ä¸ªæŒ‰é’®çš„å›è°ƒå‡½æ•°ã€‚
 
-È»ºó¶¨ÒåÒ»¸ö¶¨Ê±³öÏÖenemyµÄº¯ÊıaddEnemy,Ö÷Òª¾ÍÊÇ³õÊ¼»¯shriteSheet£¬¼ÓÔØ£¬È»ºó¼ÓÔØCCSpriteFrameCacheµÄÖ¡£¬ÒÔ¼°ËûÃÇµÄ¶¯×÷¡£
+ç„¶åå®šä¹‰ä¸€ä¸ªå®šæ—¶å‡ºç°enemyçš„å‡½æ•°addEnemy,ä¸»è¦å°±æ˜¯åˆå§‹åŒ–shriteSheetï¼ŒåŠ è½½ï¼Œç„¶ååŠ è½½CCSpriteFrameCacheçš„å¸§ï¼Œä»¥åŠä»–ä»¬çš„åŠ¨ä½œã€‚
 
-¹¥»÷ÅĞ¶Ï,·ÅÔÚupdateº¯ÊıÀïÈ¥ÊµÏÖ£¬Ö÷Òª¾ÍÊÇÈ¥±éÀú¾«ÁéÊı×éÁË£¬Èç¹ûË­µÄÉä³ÌÖĞÓĞÍæ¼Ò£¬Ôò½øĞĞ¹¥»÷¡£
+æ”»å‡»åˆ¤æ–­,æ”¾åœ¨updateå‡½æ•°é‡Œå»å®ç°ï¼Œä¸»è¦å°±æ˜¯å»éå†ç²¾çµæ•°ç»„äº†ï¼Œå¦‚æœè°çš„å°„ç¨‹ä¸­æœ‰ç©å®¶ï¼Œåˆ™è¿›è¡Œæ”»å‡»ã€‚
 
-×îºóÕâ¸öupdateº¯Êı·ÅÔÚscheduleÖĞ
+æœ€åè¿™ä¸ªupdateå‡½æ•°æ”¾åœ¨scheduleä¸­ã€‚
 
-³ıÁËÒÔÉÏËµµÄÒÔÍâ,»¹¿ÉÒÔtouchÖ÷½Ç£¬Õâ¸öÔİÊ±²»ÌáÁË¡£±È½ÏÉÙµÄÇé¿ö²Å»áÓöµ½¡£
+é™¤äº†ä»¥ä¸Šè¯´çš„ä»¥å¤–,è¿˜å¯ä»¥ç‚¹å‡»ä¸»è§’ï¼Œè¿™é‡Œå°±ä¸æäº†ã€‚
 
 
 
